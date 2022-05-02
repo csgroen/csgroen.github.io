@@ -1,0 +1,22 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Blog | Clarice S Groeneveld"
+  navbar:
+    background: "#66c2a5"
+    foreground: "#f7f7f7"
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/csgroen
+      - icon: twitter
+        href: https://twitter.com/cs_groen
+format:
+  html:
+    theme: journal
+    css: styles.css
+
+editor: visual
+
