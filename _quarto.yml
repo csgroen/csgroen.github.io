@@ -4,6 +4,7 @@ project:
 
 website:
   title: "Blog | Clarice S Groeneveld"
+  description: "Bioinformatics and data visualization blog"
   navbar:
     background: "#66c2a5"
     foreground: "#f7f7f7"

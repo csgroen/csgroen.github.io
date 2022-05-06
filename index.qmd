@@ -1,5 +1,6 @@
 ---
 title: "Blog | Clarice S Groeneveld"
+subtitle: "Bioinformatics and data visualization tips, tutorials and commentary"
 listing:
   contents: posts
   sort: "date desc"
