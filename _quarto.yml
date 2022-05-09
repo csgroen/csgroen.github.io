@@ -6,8 +6,8 @@ website:
   title: "Blog | Clarice S Groeneveld"
   description: "Bioinformatics and data visualization blog"
   navbar:
-    background: "#66c2a5"
-    foreground: "#f7f7f7"
+    background: "#2ec4b6"
+    foreground: "#ffffff"
     right:
       - about.qmd
       - icon: github
