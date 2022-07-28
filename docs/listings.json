@@ -4,5 +4,11 @@
     "items": [
       "/posts/dockerize_my_analysis/index.html"
     ]
+  },
+  {
+    "listing": "/blog.html",
+    "items": [
+      "/posts/dockerize_my_analysis/index.html"
+    ]
   }
 ]

@@ -1,13 +1,34 @@
 ---
-title: "Blog | Clarice S Groeneveld"
-subtitle: "Bioinformatics and data visualization tips, tutorials and commentary"
-listing:
-  contents: posts
-  sort: "date desc" 
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
-page-layout: full
-title-block-banner: true
+title: "About"
+about:
+  template: trestles
+  image: profile.jpg
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com/cs_groen
+    - icon: linkedin
+      text: linkedIn
+      href: https://www.linkedin.com/in/clarice-groeneveld-424607198/
+    - icon: github
+      text: github
+      href: https://github.com/csgroen
 ---
+
+Hi, I'm Clarice Groeneveld and I'm currently a doctoral student at PSL Research University as a member of Radvanyi lab at Institut Curie and MEPPOT under Aurélien de Reyniès at Cordeliers Research Institute.
+
+I'm passionate about using molecular data to find biological insights that can lead to more treatment options for patients. I particularly love exploring and visualizing shiny new molecular data of all kinds for insights. I have experience with bulk epigenetic, transcriptomic and proteomic data, as well as single-cell experiments.
+
+I also strive to write and implement well thought-out and documented methods to do my research. I started this blog to share some code to help myself and others to carry out more reproducible research.
+
+## Education
+
+-   Doctorate (PSL Research University, Institut Curie and Cordeliers Research Center) \| Sep 2020 - ongoing \| Bladder cancer heterogeneity and TME.
+
+-   Masters (Bioinformatics, Federal University of Paraná) \| Mar 2017 - Mar 2019 \| Regulatory network analyses and framework development
+
+-   BEng Bioprocess Engineering and Biotechnology (Federal University of Paraná, study abroad at University of Sydney) \| Mar 2010 - Jun 2016
+
+## Publications
+
+Check out my full publication record on [ORCID](https://orcid.org/0000-0001-5222-2586).

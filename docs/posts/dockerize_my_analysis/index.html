@@ -138,7 +138,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html">About</a>
+    <a class="nav-link" href="../../index.html">About</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html">Blog</a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/csgroen"><i class="bi bi-github" role="img">
@@ -243,8 +246,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>✔ ggplot2 3.3.5     ✔ purrr   0.3.4
-✔ tibble  3.1.6     ✔ dplyr   1.0.9
+<pre><code>✔ ggplot2 3.3.6     ✔ purrr   0.3.4
+✔ tibble  3.1.7     ✔ dplyr   1.0.9
 ✔ tidyr   1.2.0     ✔ stringr 1.4.0
 ✔ readr   2.1.2     ✔ forcats 0.5.1</code></pre>
 </div>
@@ -290,11 +293,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="creating-our-docker" class="level3">
 <h3 class="anchored" data-anchor-id="creating-our-docker">Creating our docker</h3>
-<p>Now we need to create our docker file. There’s a lot more information about it <a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices/">here</a> and a cheat sheet on docker <a href="https://collabnix.com/docker-cheatsheet/">here</a>.</p>
+<p>Now we need to create our docker file. There’s a lot more information about it <a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices/">here</a> and a cheat sheet on docker <a href="https://collabnix.com/docker-cheatsheet/">here</a>. But here’s how I think is easiest to do for R reproducible analyses.</p>
 <p>My R docker philosophy is that we keep code and data separate from our environment. The <strong>docker will only contain the environment to reproduce the analysis</strong>. <strong>The code and data will be mounted into the docker when it is run</strong>. This means you can still modify the code once the docker image has been built and don’t need to build it again every time, as long as you didn’t add any new dependencies in the new code. This will greatly simplify our lives, while still ensuring full reproducibility of results.</p>
-<p>Time to assemble the <code>Dockerfile</code> and build our image.</p>
-<p>For all R projects, look no further than the <a href="https://www.rocker-project.org/images/">Rocker project</a> for all your base image needs. What the best version will be depends on this project, but my general direction is: if you use tidyverse anywhere, use the tidyverse image. Otherwise, use the rstudio image to have a GUI into your environment.</p>
-<p>Now, make sure you take a rocker image with the same R version you are running locally. This base Dockerfile should work with minimal changes between projects:</p>
+<p>That being said, time to assemble the <code>Dockerfile</code> and build our image.</p>
+<p>For all R projects, look no further than the <a href="https://www.rocker-project.org/images/">Rocker project</a> for all your base image needs. What is the best version will depend on this project, but my general direction is: if you use tidyverse anywhere, use the tidyverse image. Otherwise, use the rstudio image to have a GUI into your environment.</p>
+<p>Now, make sure you take a rocker image with the same R version as you. Then, let’s do our Dockerfile:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">FROM</span> rocker/tidyverse:4.2.0</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># your renv version</span></span>
@@ -307,7 +310,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="ex">COPY</span> renv.lock renv.lock</span>
 <span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="ex">RUN</span> R <span class="st">"renv::restore()"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Write this to a file called <code>Dockerfile</code> in the directory where your analysis is (you’ll see it included if you downloaded the project).</p>
+<p>Write this to a file called Dockerfile in the directory where your analysis is (you’ll see it included if you downloaded the project).</p>
 <p>Now navigate to the directory in the terminal and build it (this will take a while):</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> build <span class="at">-t</span> csgroen/blog_example .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -330,8 +333,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>-e USERID=<span class="va">$UID</span> <span class="dt">\</span></span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>csgroen/blog_example</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Here, we are mounting the <code>example</code> directory into the <code>/project</code> directory of our container and preparing the password and username so we can use Rstudio server to connect to the image.</p>
-<p>Make sure you use the absolute <code>path/to/example</code>, e.g.&nbsp;<code>/home/myuser/Downloads/example</code></p>
+<p>Here, we are mounting the “<code>example</code>” directory into the “<code>project</code>” directory of our image and preparing the password and username so we can use Rstudio server to connect to the image.</p>
+<p>Make sure you use the absolute <code>path/to/example</code>, e.g.&nbsp;<code>/home/myuser/Downloads/example.</code></p>
 <p>Once you run this, you’ll see this message, or something very similar:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">[s6-init]</span> making user provided files available at /var/run/s6/etc...exited 0.</span>
@@ -363,13 +366,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </blockquote>
 <p>You’ll be signed into something like this:</p>
 <p><img src="rstudio_open.png" class="img-fluid" alt="Rstudio server after sign-in"></p>
-<p>Here, we see our <code>project</code> folder in the Files. Navigate there and you’ll see our <code>sleep.R</code> script. Open it and run it.</p>
+<p>See our project folder in the Files. Navigate there and you’ll see our sleep.R script. Open it and run it.</p>
 <p><img src="run_script.png" class="img-fluid"></p>
 <p>And we’re done: we’ve been able to run the same analysis in the same environment we had when we wrote it.</p>
 </section>
 <section id="sharing" class="level3">
 <h3 class="anchored" data-anchor-id="sharing">Sharing</h3>
-<p>Now that everything works, we can push our docker, and add the example (with the code and data) to Github. In this minimal example, we don’t have any additional data other than the script, but you could add any relevant data that as well.</p>
+<p>Now that everything works, we can push our docker, and add the example (with the code and data) to Github. In this minimal example, we don’t have any additional data other than the script, but you could add that as well.</p>
 <p>Check <a href="https://docs.docker.com/docker-hub/repos/#:~:text=To%20push%20an%20image%20to,docs%2Fbase%3Atesting%20">these instructions</a> to push to Docker Hub.</p>
 <p>And then add your code/data to a repo on Github, <a href="https://github.com/csgroen/blog_example">like I did here</a>. You don’t need to add the <code>Dockerfile</code> or <code>renv.lock</code> to Github.</p>
 <p>Make a README like this to teach others how to reproduce the analysis:</p>

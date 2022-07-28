@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Blog | Clarice S Groeneveld - About</title>
+<title>Blog | Clarice S Groeneveld - Blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,6 +24,8 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -52,12 +54,35 @@ ul.task-list{list-style: none;}
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+  </script>
 
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -72,10 +97,10 @@ ul.task-list{list-style: none;}
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page">About</a>
+    <a class="nav-link" href="./index.html">About</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html">Blog</a>
+    <a class="nav-link active" href="./blog.html" aria-current="page">Blog</a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/csgroen"><i class="bi bi-github" role="img">
@@ -94,49 +119,89 @@ ul.task-list{list-style: none;}
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Blog</h1>
+            <p class="subtitle lead">Bioinformatics and data visualization tips, tutorials and commentary</p>
+                </div>
+  </div>
+    
+  
+
+
+
+  <div class="quarto-title-meta">
+
+      
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="docker">docker <span class="quarto-category-count">(1)</span></div><div class="category" data-category="r">r <span class="quarto-category-count">(1)</span></div><div class="category" data-category="tutorial">tutorial <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<div class="quarto-about-trestles">
-  <div class="about-entity">
-    <img src="profile.jpg" class="about-image
-  rounded " style="width: 20em;">
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">About</h1>
-</div>
-<div class="quarto-title-meta">
-  </div>
-</header>
-    <div class="about-links">
-  <a href="https://twitter.com/cs_groen" class="about-link">twitter</a>
-  <a href="https://www.linkedin.com/in/clarice-groeneveld-424607198/" class="about-link">linkedIn</a>
-  <a href="https://github.com/csgroen" class="about-link">github</a>
-</div>
-  </div>
-  <div class="about-contents"><main class="content" id="quarto-document-content">
-<p>Hi, I’m Clarice Groeneveld and I’m currently a doctoral student at PSL Research University as a member of Radvanyi lab at Institut Curie and MEPPOT under Aurélien de Reyniès at Cordeliers Research Institute.</p>
-<p>I’m passionate about using molecular data to find biological insights that can lead to more treatment options for patients. I particularly love exploring and visualizing shiny new molecular data of all kinds for insights. I have experience with bulk epigenetic, transcriptomic and proteomic data, as well as single-cell experiments.</p>
-<p>I also strive to write and implement well thought-out and documented methods to do my research. I started this blog to share some code to help myself and others to carry out more reproducible research.</p>
-<section id="education" class="level2">
-<h2 class="anchored" data-anchor-id="education">Education</h2>
-<ul>
-<li><p>Doctorate (PSL Research University, Institut Curie and Cordeliers Research Center) | Sep 2020 - ongoing | Bladder cancer heterogeneity and TME.</p></li>
-<li><p>Masters (Bioinformatics, Federal University of Paraná) | Mar 2017 - Mar 2019 | Regulatory network analyses and framework development</p></li>
-<li><p>BEng Bioprocess Engineering and Biotechnology (Federal University of Paraná, study abroad at University of Sydney) | Mar 2010 - Jun 2016</p></li>
-</ul>
-</section>
-<section id="publications" class="level2">
-<h2 class="anchored" data-anchor-id="publications">Publications</h2>
-<p>Check out my full publication record on <a href="https://orcid.org/0000-0001-5222-2586">ORCID</a>.</p>
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
-</section>
-</main></div>
+
+
+
+
+
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="r,tutorial,docker" data-listing-date-sort="1651442400000" data-listing-file-modified-sort="1651496588387" data-listing-reading-time-sort="6.25">
+<div class="thumbnail">
+<p><a href="./posts/dockerize_my_analysis/index.html"> <img src="./posts/dockerize_my_analysis/meme.png" class="thumnail-image"> </a></p>
 </div>
- <!-- /main -->
+<div class="body">
+<a href="./posts/dockerize_my_analysis/index.html">
+<h3 class="no-anchor listing-title">
+Dockerizing my R environment for reproducibility
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('r'); return false;">
+r
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('tutorial'); return false;">
+tutorial
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('docker'); return false;">
+docker
+</div>
+</div>
+<a href="./posts/dockerize_my_analysis/index.html">
+<div class="listing-description">
+<p>Are you tired of package updates changing your outputs? This one is for you</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/dockerize_my_analysis/index.html">
+<div class="listing-date">
+May 2, 2022
+</div>
+<div class="listing-author">
+Clarice S Groeneveld
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const icon = "";

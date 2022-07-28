@@ -9,7 +9,8 @@ website:
     background: "#2ec4b6"
     foreground: "#ffffff"
     right:
-      - about.qmd
+      - index.qmd
+      - blog.qmd
       - icon: github
         href: https://github.com/csgroen
       - icon: twitter
