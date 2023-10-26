@@ -17,13 +17,15 @@ about:
 
 Hi, I'm Clarice Groeneveld and I'm currently a doctoral student at PSL Research University as a member of Radvanyi lab at Institut Curie and MEPPOT under Aurélien de Reyniès at Cordeliers Research Institute.
 
-I'm passionate about using molecular data to find biological insights that can lead to more treatment options for patients. I particularly love exploring and visualizing shiny new molecular data of all kinds for insights. I have experience with bulk epigenetic, transcriptomic and proteomic data, as well as single-cell experiments.
+I'm passionate about using molecular data to find biological insights that can lead to more treatment options for patients. I particularly love exploring and visualizing shiny new molecular data of all kinds for insights. I have experience with bulk epigenetic, transcriptomic and proteomic data, as well as single-cell experiments, spatial transcriptomics and like to dip my toe into image analysis.
 
 I also strive to write and implement well thought-out and documented methods to do my research. I started this blog to share some code to help myself and others to carry out more reproducible research.
 
 ## Education
 
--   Doctorate (PSL Research University, Institut Curie and Cordeliers Research Center) \| Sep 2020 - ongoing \| Bladder cancer heterogeneity and TME.
+- Post-Doc (Cordeliers Research Center, Université Paris-Cité) - Tumor microenvironment - Jul 2023 - ongoing
+
+-   Doctorate (PSL Research University, Institut Curie and Cordeliers Research Center) \| Sep 2020 - Jul 2023 \| Bladder cancer heterogeneity and TME.
 
 -   Masters (Bioinformatics, Federal University of Paraná) \| Mar 2017 - Mar 2019 \| Regulatory network analyses and framework development
 
