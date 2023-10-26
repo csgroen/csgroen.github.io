@@ -60,194 +60,194 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "deconverse: Deconvolution using RNA-seq references\n\n\n\n\n\n\n\nr\n\n\npresentation\n\n\ndeconverse\n\n\n\n\n\n\n\n\n\n\n\nOct 26, 2023\n\n\nClarice S Groeneveld\n\n\n\n\n\n\n  \n\n\n\n\nDockerizing my R environment for reproducibility\n\n\n\n\n\n\n\nr\n\n\ntutorial\n\n\ndocker\n\n\n\n\nAre you tired of package updates changing your outputs? This one is for you\n\n\n\n\n\n\nMay 2, 2022\n\n\nClarice S Groeneveld\n\n\n\n\n\n\nNo matching items"
+    "text": "deconverse: Deconvolution using scRNA-seq references\n\n\n\n\n\n\n\nr\n\n\npresentation\n\n\ndeconverse\n\n\n\n\n\n\n\n\n\n\n\nOct 26, 2023\n\n\nClarice S Groeneveld\n\n\n\n\n\n\n  \n\n\n\n\nDockerizing my R environment for reproducibility\n\n\n\n\n\n\n\nr\n\n\ntutorial\n\n\ndocker\n\n\n\n\nAre you tired of package updates changing your outputs? This one is for you\n\n\n\n\n\n\nMay 2, 2022\n\n\nClarice S Groeneveld\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/deconverse_bioinfoclub/index.html#what-is-deconvolution",
     "href": "posts/deconverse_bioinfoclub/index.html#what-is-deconvolution",
-    "title": "deconverse: Deconvolution using RNA-seq references",
+    "title": "deconverse: Deconvolution using scRNA-seq references",
     "section": "What is deconvolution?",
     "text": "What is deconvolution?\nThe goal of deconvolution is to predict the makeup of a mixture in terms of its components and their fractions. i.e. if:\n\n\nMixture: bulk RNA-seq profiles (bulk, spot on a 10X Visium)\nComponents: cell type profiles (C)\n\nthen \\(mixture = \\sum_{i=1}^{n} C_iw_i\\) subject to: \\(\\sum_{i=1}^n w_i = 1\\) and \\(w_i \\geq 0\\)"
   },
   {
     "objectID": "posts/deconverse_bioinfoclub/index.html#deconvolution-graphical-summary",
     "href": "posts/deconverse_bioinfoclub/index.html#deconvolution-graphical-summary",
-    "title": "deconverse: Deconvolution using RNA-seq references",
+    "title": "deconverse: Deconvolution using scRNA-seq references",
     "section": "Deconvolution graphical summary",
     "text": "Deconvolution graphical summary"
   },
   {
     "objectID": "posts/deconverse_bioinfoclub/index.html#why-is-it-useful",
     "href": "posts/deconverse_bioinfoclub/index.html#why-is-it-useful",
-    "title": "deconverse: Deconvolution using RNA-seq references",
+    "title": "deconverse: Deconvolution using scRNA-seq references",
     "section": "Why is it useful?",
     "text": "Why is it useful?\nGoal: define the cell types and their proportions present in a sample\n\nIdentify and understand tissue heterogeneity\nAssociate cell types with clinical variables (e.g. survival, response to therapy)\nApply to downstream analysis: e.g. cell-to-cell communication"
   },
   {
     "objectID": "posts/deconverse_bioinfoclub/index.html#challenges-of-deconvolution",
     "href": "posts/deconverse_bioinfoclub/index.html#challenges-of-deconvolution",
-    "title": "deconverse: Deconvolution using RNA-seq references",
+    "title": "deconverse: Deconvolution using scRNA-seq references",
     "section": "Challenges of deconvolution",
     "text": "Challenges of deconvolution\nIf \\(mixture = \\sum_{i=1}^{n} C_iw_i\\), subject to: \\(\\sum_{i=1}^n w_i = 1\\) and \\(w_i \\geq 0\\)\n\n\nFor the user:\n\nWhat are the cell types present and how many are there?\nWhat is a good reference for my mixture?\n\nFor the method:\n\nAssumption: all cell types that could be present are represented in the reference\nHow do I identify the cell type profiles (C)? In what space?\nHow do I measure if I have a good fit?"
   },
   {
     "objectID": "posts/deconverse_bioinfoclub/index.html#tme-deconvolution-first-generation",
     "href": "posts/deconverse_bioinfoclub/index.html#tme-deconvolution-first-generation",
-    "title": "deconverse: Deconvolution using RNA-seq references",
+    "title": "deconverse: Deconvolution using scRNA-seq references",
     "section": "TME deconvolution: first generation",
     "text": "TME deconvolution: first generation\nFirst generation deconvolution methods generally used FACS-sorted gene expression as cell type profiles, often from PBMCs. References are almost always pre-computed."
   },
   {
     "objectID": "posts/deconverse_bioinfoclub/index.html#tme-deconvolution-examples-of-first-generation-methods",
     "href": "posts/deconverse_bioinfoclub/index.html#tme-deconvolution-examples-of-first-generation-methods",
-    "title": "deconverse: Deconvolution using RNA-seq references",
+    "title": "deconverse: Deconvolution using scRNA-seq references",
     "section": "TME deconvolution: examples of first generation methods",
     "text": "TME deconvolution: examples of first generation methods\n\nCIBERSORT (support vector regression)\nMCPcounter (marker mean expression)\nxCell (corrected ssgsea)\nEPIC and quanTiSeq (constrained least square minimization)\n\nSome methods don’t do deconvolution per se (don’t return proportions): inter-sample comparisons only\nMethods don’t assume a complete reference: only deconvolute cell types of the TME"
   },
   {
     "objectID": "posts/deconverse_bioinfoclub/index.html#cell-type-deconvolution-second-generation",
     "href": "posts/deconverse_bioinfoclub/index.html#cell-type-deconvolution-second-generation",
-    "title": "deconverse: Deconvolution using RNA-seq references",
+    "title": "deconverse: Deconvolution using scRNA-seq references",
     "section": "Cell type deconvolution: second-generation",
     "text": "Cell type deconvolution: second-generation\n(User-provided) single-cell reference of the same context as the sample to be deconvoluted"
   },
   {
     "objectID": "posts/deconverse_bioinfoclub/index.html#the-single-cell-reference-atlases",
     "href": "posts/deconverse_bioinfoclub/index.html#the-single-cell-reference-atlases",
-    "title": "deconverse: Deconvolution using RNA-seq references",
+    "title": "deconverse: Deconvolution using scRNA-seq references",
     "section": "The single cell reference: atlases",
     "text": "The single cell reference: atlases\n\nTabula Muris\nTabula Sapiens\nHuman Lung Atlas\nMultiple published single-cell atlases of different tissues or pathologies\n. . .\n\nMajor problem: cell-type annotation"
   },
   {
     "objectID": "posts/deconverse_bioinfoclub/index.html#example-colon-atlas-pelka-et-al.-2021",
     "href": "posts/deconverse_bioinfoclub/index.html#example-colon-atlas-pelka-et-al.-2021",
-    "title": "deconverse: Deconvolution using RNA-seq references",
+    "title": "deconverse: Deconvolution using scRNA-seq references",
     "section": "Example: Colon Atlas (Pelka et al., 2021)",
     "text": "Example: Colon Atlas (Pelka et al., 2021)\nCoarse-grained annotation\n\n\n\n\n\n\nFine-grained annotation of compartments"
   },
   {
     "objectID": "posts/deconverse_bioinfoclub/index.html#cell-type-resolution-can-we-separate-them",
     "href": "posts/deconverse_bioinfoclub/index.html#cell-type-resolution-can-we-separate-them",
-    "title": "deconverse: Deconvolution using RNA-seq references",
+    "title": "deconverse: Deconvolution using scRNA-seq references",
     "section": "Cell type resolution: can we separate them?",
     "text": "Cell type resolution: can we separate them?\n\n\n\nDeconvolution methods are often robust when using coarse-grained annotation\nDeconvolution often fails at separating cell types defined by ‘state’ (e.g. T CD4+/CD8+, B-naive from B-mature)\nWhat is the appropriate “level” of annotation that allows for deconvolution?"
   },
   {
     "objectID": "posts/deconverse_bioinfoclub/index.html#deconverse-a-meta-method-package-with-benchmarking-built-in",
     "href": "posts/deconverse_bioinfoclub/index.html#deconverse-a-meta-method-package-with-benchmarking-built-in",
-    "title": "deconverse: Deconvolution using RNA-seq references",
+    "title": "deconverse: Deconvolution using scRNA-seq references",
     "section": "deconverse: a meta-method package with benchmarking built-in",
     "text": "deconverse: a meta-method package with benchmarking built-in"
   },
   {
     "objectID": "posts/deconverse_bioinfoclub/index.html#deconvolution-methods-in-deconverse",
     "href": "posts/deconverse_bioinfoclub/index.html#deconvolution-methods-in-deconverse",
-    "title": "deconverse: Deconvolution using RNA-seq references",
+    "title": "deconverse: Deconvolution using scRNA-seq references",
     "section": "Deconvolution methods in deconverse",
     "text": "Deconvolution methods in deconverse\n\ndeconvolution_methods()\n\n         OLS         DWLS          SVR   CIBERSORTx        MuSiC   BayesPrism \n       \"ols\"       \"dwls\"        \"svr\" \"cibersortx\"      \"music\" \"bayesprism\" \n      Bisque    AutoGeneS       scaden         CARD         RCTD    SPOTlight \n    \"bisque\"  \"autogenes\"     \"scaden\"       \"card\"       \"rctd\"  \"spotlight\" \n\n\n\nspatial_only_methods()\n\n       CARD        RCTD   SPOTlight \n     \"card\"      \"rctd\" \"spotlight\""
   },
   {
     "objectID": "posts/deconverse_bioinfoclub/index.html#deconverse-ideas",
     "href": "posts/deconverse_bioinfoclub/index.html#deconverse-ideas",
-    "title": "deconverse: Deconvolution using RNA-seq references",
+    "title": "deconverse: Deconvolution using scRNA-seq references",
     "section": "deconverse ideas",
     "text": "deconverse ideas\nScientific\n\n\nSupport for multiple levels of annotation at the same time\nCorrection of finer grained annotation by coarser-grained\nAid users in detecting what level of annotation is appropriate through benchmarking\n\n\nTechnical\n\n\nAny method: same syntax\nRun multiple methods with one command\nA general framework: adding new methods is easy"
   },
   {
     "objectID": "posts/deconverse_bioinfoclub/index.html#deconverse-syntax-screference",
     "href": "posts/deconverse_bioinfoclub/index.html#deconverse-syntax-screference",
-    "title": "deconverse: Deconvolution using RNA-seq references",
+    "title": "deconverse: Deconvolution using scRNA-seq references",
     "section": "deconverse syntax: screference",
     "text": "deconverse syntax: screference\nSingle-cell (hierarchycal) reference\n\npbmc_ref &lt;- new_hscreference(pbmc_train,\n                annot_ids = c(\"Cell_major_identities\", \"Cell_minor_identities\"),\n                project_name = \"pbmc_example\",\n                batch_id = \"orig.ident\")\n\n\npbmc_ref &lt;- pbmc_ref |&gt;\n    compute_reference(\"dwls\") |&gt;\n    compute_reference(\"autogenes\")"
   },
   {
     "objectID": "posts/deconverse_bioinfoclub/index.html#deconverse-syntax-deconvolute",
     "href": "posts/deconverse_bioinfoclub/index.html#deconverse-syntax-deconvolute",
-    "title": "deconverse: Deconvolution using RNA-seq references",
+    "title": "deconverse: Deconvolution using scRNA-seq references",
     "section": "deconverse syntax: deconvolute",
     "text": "deconverse syntax: deconvolute\n\ndeconv_res &lt;- deconvolute_all(gexp, pbmc_ref,\n                              methods = c(\"dwls\", \"ols\", \"svr\"))"
   },
   {
     "objectID": "posts/deconverse_bioinfoclub/index.html#deconverse-syntax-scbench",
     "href": "posts/deconverse_bioinfoclub/index.html#deconverse-syntax-scbench",
-    "title": "deconverse: Deconvolution using RNA-seq references",
+    "title": "deconverse: Deconvolution using scRNA-seq references",
     "section": "deconverse syntax: scbench",
     "text": "deconverse syntax: scbench\n\npbmc_bench &lt;- new_scbench(pbmc_test, \n                         annot_ids = c(\"Cell_major_identities\",\n                                       \"Cell_minor_identities\"),\n                         project_name = \"pbmc_example\",\n                         batch_id = \"orig.ident\")\n\nGenerate “mixtures” for each benchmarking test (bounds can be given)\n\npbmc_bench &lt;- pbmc_bench |&gt;\n    mixtures_population(nsamp = 500) |&gt;\n    mixtures_lod() |&gt;\n    mixtures_spillover()"
   },
   {
     "objectID": "posts/deconverse_bioinfoclub/index.html#deconverse-syntax-scbench-1",
     "href": "posts/deconverse_bioinfoclub/index.html#deconverse-syntax-scbench-1",
-    "title": "deconverse: Deconvolution using RNA-seq references",
+    "title": "deconverse: Deconvolution using scRNA-seq references",
     "section": "deconverse syntax: scbench",
     "text": "deconverse syntax: scbench\nCreates pseudobulk samples from the single-cell profiles in pbmc_test\n\npbmc_bench &lt;- pseudobulks(pbmc_bench, ncells = 1000)\n\n\npbmc_bench &lt;- deconvolute_all(pbmc_bench, pbmc_ref,\n                              methods = c(\"dwls\", \"svr\", \"ols\", \n                                          \"autogenes\", \"bisque\"))"
   },
   {
     "objectID": "posts/deconverse_bioinfoclub/index.html#deconverse-benchmarking-results-population",
     "href": "posts/deconverse_bioinfoclub/index.html#deconverse-benchmarking-results-population",
-    "title": "deconverse: Deconvolution using RNA-seq references",
+    "title": "deconverse: Deconvolution using scRNA-seq references",
     "section": "deconverse benchmarking results: population",
     "text": "deconverse benchmarking results: population\n\nplt_cors_scatter(pbmc_bench, method = \"dwls\")"
   },
   {
     "objectID": "posts/deconverse_bioinfoclub/index.html#deconverse-benchmarking-results-compare-between-populations",
     "href": "posts/deconverse_bioinfoclub/index.html#deconverse-benchmarking-results-compare-between-populations",
-    "title": "deconverse: Deconvolution using RNA-seq references",
+    "title": "deconverse: Deconvolution using scRNA-seq references",
     "section": "deconverse benchmarking results: compare between populations",
     "text": "deconverse benchmarking results: compare between populations\n\nplt_cor_heatmap(pbmc_bench, level = \"l2\")$heatmap"
   },
   {
     "objectID": "posts/deconverse_bioinfoclub/index.html#deconverse-benchmarking-results-spillover",
     "href": "posts/deconverse_bioinfoclub/index.html#deconverse-benchmarking-results-spillover",
-    "title": "deconverse: Deconvolution using RNA-seq references",
+    "title": "deconverse: Deconvolution using scRNA-seq references",
     "section": "deconverse benchmarking results: spillover",
     "text": "deconverse benchmarking results: spillover\n\nplt_spillover_heatmap(pbmc_bench)$heatmap"
   },
   {
     "objectID": "posts/deconverse_bioinfoclub/index.html#deconverse-benchmarking-results-limit-of-detection",
     "href": "posts/deconverse_bioinfoclub/index.html#deconverse-benchmarking-results-limit-of-detection",
-    "title": "deconverse: Deconvolution using RNA-seq references",
+    "title": "deconverse: Deconvolution using scRNA-seq references",
     "section": "deconverse benchmarking results: limit of detection",
     "text": "deconverse benchmarking results: limit of detection\n\nplt_lod_heatmap(pbmc_bench)$heatmap"
   },
   {
     "objectID": "posts/deconverse_bioinfoclub/index.html#some-details-deconvolution-methods-in-deconverse",
     "href": "posts/deconverse_bioinfoclub/index.html#some-details-deconvolution-methods-in-deconverse",
-    "title": "deconverse: Deconvolution using RNA-seq references",
+    "title": "deconverse: Deconvolution using scRNA-seq references",
     "section": "Some details: Deconvolution methods in deconverse",
     "text": "Some details: Deconvolution methods in deconverse\n\n\nOrdinary Least Squares (OLS), Support Vector (SVR) and Dampened Weighted Least Squares Regressions use the same reference cell marker matrix from Seurat::findMarkers\nCIBERSORTx runs in a docker\nMuSiC and DWLS were reimplemented for performance\n(Python) Reticulate methods: AutoGeneS and scaden"
   },
   {
     "objectID": "posts/deconverse_bioinfoclub/index.html#spatial-deconvolution-methods-to-be-added-to-deconverse-0.3",
     "href": "posts/deconverse_bioinfoclub/index.html#spatial-deconvolution-methods-to-be-added-to-deconverse-0.3",
-    "title": "deconverse: Deconvolution using RNA-seq references",
+    "title": "deconverse: Deconvolution using scRNA-seq references",
     "section": "Spatial deconvolution methods to be added to deconverse 0.3",
     "text": "Spatial deconvolution methods to be added to deconverse 0.3\nSame syntax, any method:\n\nscref &lt;- new_screference(kidney_so,\n                                annot_id = c(\"compartment\"),\n                                project_name = \"kidney\",\n                                batch_id = \"donor\")\nscref &lt;- compute_reference(scref, method = \"card\")\n\n\nspatial_obj &lt;- deconvolute(spatial_obj, scref, method = \"rctd\")"
   },
   {
     "objectID": "posts/deconverse_bioinfoclub/index.html#example-of-spatial-deconvolution-results",
     "href": "posts/deconverse_bioinfoclub/index.html#example-of-spatial-deconvolution-results",
-    "title": "deconverse: Deconvolution using RNA-seq references",
+    "title": "deconverse: Deconvolution using scRNA-seq references",
     "section": "Example of spatial deconvolution results",
     "text": "Example of spatial deconvolution results\n\nSpatialFeaturePlot(spatial_obj,\n                   features = deconverse_results(spatial_obj, method = \"rctd\")[[1]],\n                   pt.size.factor = 1.3)"
   },
   {
     "objectID": "posts/deconverse_bioinfoclub/index.html#example-of-spatial-deconvolution-results-1",
     "href": "posts/deconverse_bioinfoclub/index.html#example-of-spatial-deconvolution-results-1",
-    "title": "deconverse: Deconvolution using RNA-seq references",
+    "title": "deconverse: Deconvolution using scRNA-seq references",
     "section": "Example of spatial deconvolution results",
     "text": "Example of spatial deconvolution results\n\nSpatialDimPlot(spatial_obj, \n               group.by = deconverse_results(spatial_obj, method = \"rctd\", major_population = TRUE)[1], \n               pt.size.factor = 1.3)"
   },
   {
     "objectID": "posts/deconverse_bioinfoclub/index.html#new-methodology-for-spatial-deconvolution",
     "href": "posts/deconverse_bioinfoclub/index.html#new-methodology-for-spatial-deconvolution",
-    "title": "deconverse: Deconvolution using RNA-seq references",
+    "title": "deconverse: Deconvolution using scRNA-seq references",
     "section": "New methodology for spatial deconvolution?",
     "text": "New methodology for spatial deconvolution?\nNot all current “spatial specific” methods use spatial information on deconvolution:\n\nUse spatial information: CARD, cell2location\nDon’t use: SPOTlight, RCTD, DestVI\n\n\nGraph-based? e.g. graph-NMF followed by NNLS"
   },
   {
     "objectID": "posts/deconverse_bioinfoclub/index.html#thanks",
     "href": "posts/deconverse_bioinfoclub/index.html#thanks",
-    "title": "deconverse: Deconvolution using RNA-seq references",
+    "title": "deconverse: Deconvolution using scRNA-seq references",
     "section": "Thanks!",
     "text": "Thanks!\nEmail 📧 clarice.groeneveld@inserm.fr\nGithub 😺 csgroen\nBlueSky (bye-bye X) 🟦 csgroen\nTry Deconverse: github.com/csgroen/deconverse"
   }
