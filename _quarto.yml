@@ -3,10 +3,10 @@ project:
   output-dir: docs
 
 website:
-  title: "Blog | Clarice S Groeneveld"
+  title: "Clarice S Groeneveld"
   description: "Bioinformatics and data visualization blog"
   navbar:
-    background: "#2ec4b6"
+    background: "#0f986b"
     foreground: "#ffffff"
     right:
       - index.qmd
@@ -17,7 +17,7 @@ website:
         href: https://twitter.com/cs_groen
 format:
   html:
-    theme: journal
+    theme: cosmo
     css: styles.css
 
 editor: visual

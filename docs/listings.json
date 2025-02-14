@@ -8,6 +8,8 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/tutorial_seurat_du/index.html",
+      "/posts/intro_seurat_du/index.html",
       "/posts/deconverse_bioinfoclub/index.html",
       "/posts/dockerize_my_analysis/index.html"
     ]

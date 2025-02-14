@@ -4,9 +4,6 @@ about:
   template: trestles
   image: profile.jpg
   links:
-    - icon: twitter
-      text: twitter
-      href: https://twitter.com/cs_groen
     - icon: linkedin
       text: linkedIn
       href: https://www.linkedin.com/in/clarice-groeneveld-424607198/
@@ -15,11 +12,25 @@ about:
       href: https://github.com/csgroen
 ---
 
-Hi, I'm Clarice Groeneveld and I'm currently a doctoral student at PSL Research University as a member of Radvanyi lab at Institut Curie and MEPPOT under Aurélien de Reyniès at Cordeliers Research Institute.
+Hi, I'm Clarice Groeneveld and I'm the director of the Cordeliers AI 
+and Bioinformatics (CAIBI) Core Facility at the Cordeliers Research Center.
 
-I'm passionate about using molecular data to find biological insights that can lead to more treatment options for patients. I particularly love exploring and visualizing shiny new molecular data of all kinds for insights. I have experience with bulk epigenetic, transcriptomic and proteomic data, as well as single-cell experiments, spatial transcriptomics and like to dip my toe into image analysis.
+Previously, I was a post-doctoral fellow at MUST team in the Cordeliers and a 
+earned my doctorate at PSL Research University as a member of 
+Radvanyi lab at Institut Curie and CIT La Ligue under Aurélien de Reyniès.
 
-I also strive to write and implement well thought-out and documented methods to do my research. I started this blog to share some code to help myself and others to carry out more reproducible research.
+I'm passionate about using molecular data to find biological insights that 
+can lead to more treatment options for patients. I particularly love exploring
+and visualizing shiny new molecular data of all kinds for insights, and creating
+tools to do it better, faster or in a more reproducible fashion. I 
+have experience with bulk epigenetic, transcriptomic and proteomic data, 
+as well as single-cell experiments, spatial transcriptomics and like to
+dip my toe into image analysis.
+
+I strive to write and implement well thought-out and documented methods 
+to do my research, both methodological and scientific. 
+I started this blog to share some code to help myself 
+and others to carry out more reproducible research.
 
 ## Education
 
